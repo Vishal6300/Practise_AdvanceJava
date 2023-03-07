@@ -1,7 +1,7 @@
 package class1;
 
 public class A {
-	void printMessage(String message) {
+	static synchronized void printMessage(String message) {
 		System.out.print("[");
 		try {
 			System.out.println(message);

@@ -25,7 +25,7 @@ public class SynchronizedMethodDemo{
 		
 		Runnable b1= new B(a,"Hello");
 		Runnable b2= new B(a,"World");
-		Runnable b3= new B(a,"of Java");
+		Runnable b3= new B(a,"Java");
 		
 		Thread t1= new Thread(b1);
 		Thread t2= new Thread(b2);
