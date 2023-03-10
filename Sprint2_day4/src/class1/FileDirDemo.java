@@ -20,6 +20,20 @@ public class FileDirDemo {
 			
 		}
 		
+		File anotherDir= new File("myAnotherDir");
+		
+		if(!anotherDir.exists()) {
+			System.out.println("No directory named "+ anotherDir.getName());
+			System.out.println("Creating folder myANotherDir");
+			anotherDir.mkdir();
+			
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				
+			}
+		}
+		anotherDir.delete();
 
 	}
 
