@@ -13,7 +13,7 @@ public class FileDemo {
 			System.out.println("File doesn't exist");
 			return;
 		}
-		System.out.println("FIle name is "+ file.getName());
+		System.out.println("File name is "+ file.getName());
 		System.out.println("Path of file is "+file.getPath());
 		System.out.println("Absolute path of file is "+ file.getAbsolutePath());
 		System.out.println("A.txt file is "+ file.isFile());
@@ -28,11 +28,14 @@ public class FileDemo {
 			System.out.println("Creating the file");
 			anotherFile.createNewFile();
 			System.out.println("FIle is created");
-		}catch(IOException ex) {
+			Thread.sleep(5000);
+		}catch(IOException | InterruptedException ex) {
 			System.out.println("Not created");
 		}
 		
 	}
+	anotherFile.delete();
+	System.out.println("file B.txt is deleted");
 	
 	
 	}
