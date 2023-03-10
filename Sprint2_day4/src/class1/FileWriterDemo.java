@@ -10,10 +10,16 @@ public class FileWriterDemo {
 		Writer writer= new FileWriter("C.txt");
 		writer.write(100);
 		writer.write("ear Students! you will be placed soon");
+		writer.write('\n');
 		
-		
+		char content[]= {'J','a','v','a'};
+		writer.write(content);
+//		System.out.println(writer.toString());
 		writer.flush();
 		writer.close();
+//		writer= new FileWriter("C.txt");
+//		writer.write("Khusiyan manao re");
+		
 	}
 
 }
