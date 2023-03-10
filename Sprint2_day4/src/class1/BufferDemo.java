@@ -32,6 +32,7 @@ public class BufferDemo {
 		
 //		System.out.println(bfReader);
 		bfReader.close();
+		bWriter.close();
 	}
 
 }
