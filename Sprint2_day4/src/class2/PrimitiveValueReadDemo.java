@@ -8,7 +8,9 @@ public class PrimitiveValueReadDemo {
 
 	public static void main(String[] args) throws IOException {
 		Scanner sc= new Scanner(new FileInputStream("student.txt"));
-		System.out.println("give details");	
+//		Scanner sc= new Scanner(new FileInputStream("Rajat; 4; 68.54; false;Jaipur,Rajasthan"));
+//		sc.delimiter(";"); //It works as split(";");
+//		System.out.println("give details");	
 		String name= sc.next();
 			int std= sc.nextInt();
 			double percentage= sc.nextDouble();
