@@ -13,6 +13,11 @@ public class Animal	implements Serializable {
 			this.height = height;
 			this.weight = weight;
 		}
+
+		@Override
+		public String toString() {
+			return "Animal [name=" + name + ", height=" + height + ", weight=" + weight + "]";
+		}
 		
 		
 }
