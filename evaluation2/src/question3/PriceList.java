@@ -8,7 +8,8 @@ import java.util.Map;
 
 public class PriceList {
 	public static void main(String[] args) {
-		// TODO Auto-generated main block
+		// TODO Auto-generated method stub
+		
         Map<String, Double> spicePrices = new HashMap<>();
         spicePrices.put("Salt", 30.0);
         spicePrices.put("Turmeric", 35.0);
