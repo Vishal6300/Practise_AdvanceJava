@@ -1,5 +1,6 @@
 package question1;
 
+
 class Virat extends Thread{
 		
 	int sum=0;
@@ -16,7 +17,7 @@ class Virat extends Thread{
 }
 class Dhoni extends Thread{
 	public void run() {
-		for(int i=1;i<=20;i++) {
+		for(int i=1;i<=10;i++) {
 			System.out.println(Thread.currentThread().getName()+" " +i);
 		}
 		
@@ -28,7 +29,7 @@ class Rohit extends Thread{
 	public void run() {
 		// TODO Auto-generated method stub
 		
-		for(int i=1;i<=20;i++) {
+		for(int i=1;i<=10;i++) {
 			product=product*i;
 			System.out.println(Thread.currentThread().getName()+ " "+ product);
 		}
@@ -40,6 +41,13 @@ class Rohit extends Thread{
 
 public class Main {
 	public static void main(String[] args) {
-		
+			Virat v= new Virat();
+			Dhoni d= new Dhoni();
+			Rohit r= new Rohit();
+			
+			d.setName("dhoni");
+			v.setName("virat");
+			r.setName("rohit");
+			
 	}
 }
