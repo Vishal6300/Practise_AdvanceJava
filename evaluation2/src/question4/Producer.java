@@ -12,14 +12,14 @@ class Producer implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 5; i++) {
-            int number = (int) (Math.random() * 6); // produces a random number between 0 and 5
+            int number = (int) (Math.random() * 6); 
             System.out.println("Producer Produced: " + number);
             synchronized (list) {
-                list.add(number); // add the produced number to the list
-                list.notifyAll(); // notifies the consumer thread that a new number is available
+                list.add(number); 
+                list.notifyAll(); 
             }
             try {
-                Thread.sleep(1000); // sleep for 1 second
+                Thread.sleep(1000); 
             } catch (InterruptedException e) {
               
             }
