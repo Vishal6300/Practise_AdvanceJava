@@ -13,7 +13,8 @@ public class Main {
 		if(Files.exists(p)) {
 		System.out.println("File is aready exist");
 		}else {
-		
+			Path p2 = Files.createFile(p);;
+			System.out.println("created a file at :" + p2);
 		}
 
 	}
