@@ -40,14 +40,26 @@ class Rohit extends Thread{
 
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 			Virat v= new Virat();
 			Dhoni d= new Dhoni();
 			Rohit r= new Rohit();
+			
+			d.setPriority(10);
 			
 			d.setName("dhoni");
 			v.setName("virat");
 			r.setName("rohit");
 			
+			d.start();
+			d.join();
+			
+			r.start();
+			r.join();
+			
+			v.start();
+			
+			System.out.println("Ended");
+		
 	}
 }
