@@ -165,3 +165,91 @@ mysql> select * from student where name LIKE '_a%';
 |      6 | Ravi | ravi@ms       | 72.43 | UP    |
 +--------+------+---------------+-------+-------+
 2 rows in set (0.00 sec)
+
+mysql> select * from student ;
++--------+---------+------------------+-------+----------------+
+| rollNo | name    | email            | x_per | state          |
++--------+---------+------------------+-------+----------------+
+|      1 | ABC     | abc@gmail.com    | 77.42 | Karnataka      |
+|      2 | sudip   | sudip@ms         | 56.43 | Nepal          |
+|      3 | bhoomi  | bhoomi@gmail.com | 45.42 | Kerala         |
+|      4 | hero    | hero@gmail.com   | 87.42 | Jharkhand      |
+|      5 | Ram     | ram@gmail.com    | 93.12 | Bihar          |
+|      6 | Ravi    | ravi@ms          | 72.43 | UP             |
+|      7 | mosham  | mosham@ms        | 42.51 | UP             |
+|      8 | Rehan   | rehan@ms         | 59.11 | MP             |
+|      9 | Levis   | levis@ms         | 91.11 | KARNATAKA      |
+|     10 | Shruthi | Shruthi@ms       | 97.11 | Kerala         |
+|     11 | divya   | divya@francis    | 43.21 | Tripura        |
+|     12 | Vivek   | vivek@francis    | 33.21 | Jharkhand      |
+|     13 | Monoj   | manoj@masai      | 65.34 | Mizoram        |
+|     14 | Monu    | monu@masai       | 35.34 | Madhya Pradesh |
+|     15 | Roshan  | roshan@masai     | 65.34 | Uttar Pradesh  |
++--------+---------+------------------+-------+----------------+
+15 rows in set (0.00 sec)
+
+mysql> select * from student ORDER BY x_per;
++--------+---------+------------------+-------+----------------+
+| rollNo | name    | email            | x_per | state          |
++--------+---------+------------------+-------+----------------+
+|     12 | Vivek   | vivek@francis    | 33.21 | Jharkhand      |
+|     14 | Monu    | monu@masai       | 35.34 | Madhya Pradesh |
+|      7 | mosham  | mosham@ms        | 42.51 | UP             |
+|     11 | divya   | divya@francis    | 43.21 | Tripura        |
+|      3 | bhoomi  | bhoomi@gmail.com | 45.42 | Kerala         |
+|      2 | sudip   | sudip@ms         | 56.43 | Nepal          |
+|      8 | Rehan   | rehan@ms         | 59.11 | MP             |
+|     13 | Monoj   | manoj@masai      | 65.34 | Mizoram        |
+|     15 | Roshan  | roshan@masai     | 65.34 | Uttar Pradesh  |
+|      6 | Ravi    | ravi@ms          | 72.43 | UP             |
+|      1 | ABC     | abc@gmail.com    | 77.42 | Karnataka      |
+|      4 | hero    | hero@gmail.com   | 87.42 | Jharkhand      |
+|      9 | Levis   | levis@ms         | 91.11 | KARNATAKA      |
+|      5 | Ram     | ram@gmail.com    | 93.12 | Bihar          |
+|     10 | Shruthi | Shruthi@ms       | 97.11 | Kerala         |
++--------+---------+------------------+-------+----------------+
+15 rows in set (0.01 sec)
+
+mysql> select * from student ORDER BY x_per ASC;
++--------+---------+------------------+-------+----------------+
+| rollNo | name    | email            | x_per | state          |
++--------+---------+------------------+-------+----------------+
+|     12 | Vivek   | vivek@francis    | 33.21 | Jharkhand      |
+|     14 | Monu    | monu@masai       | 35.34 | Madhya Pradesh |
+|      7 | mosham  | mosham@ms        | 42.51 | UP             |
+|     11 | divya   | divya@francis    | 43.21 | Tripura        |
+|      3 | bhoomi  | bhoomi@gmail.com | 45.42 | Kerala         |
+|      2 | sudip   | sudip@ms         | 56.43 | Nepal          |
+|      8 | Rehan   | rehan@ms         | 59.11 | MP             |
+|     13 | Monoj   | manoj@masai      | 65.34 | Mizoram        |
+|     15 | Roshan  | roshan@masai     | 65.34 | Uttar Pradesh  |
+|      6 | Ravi    | ravi@ms          | 72.43 | UP             |
+|      1 | ABC     | abc@gmail.com    | 77.42 | Karnataka      |
+|      4 | hero    | hero@gmail.com   | 87.42 | Jharkhand      |
+|      9 | Levis   | levis@ms         | 91.11 | KARNATAKA      |
+|      5 | Ram     | ram@gmail.com    | 93.12 | Bihar          |
+|     10 | Shruthi | Shruthi@ms       | 97.11 | Kerala         |
++--------+---------+------------------+-------+----------------+
+15 rows in set (0.00 sec)
+
+mysql> select * from student ORDER BY x_per DESC;
++--------+---------+------------------+-------+----------------+
+| rollNo | name    | email            | x_per | state          |
++--------+---------+------------------+-------+----------------+
+|     10 | Shruthi | Shruthi@ms       | 97.11 | Kerala         |
+|      5 | Ram     | ram@gmail.com    | 93.12 | Bihar          |
+|      9 | Levis   | levis@ms         | 91.11 | KARNATAKA      |
+|      4 | hero    | hero@gmail.com   | 87.42 | Jharkhand      |
+|      1 | ABC     | abc@gmail.com    | 77.42 | Karnataka      |
+|      6 | Ravi    | ravi@ms          | 72.43 | UP             |
+|     13 | Monoj   | manoj@masai      | 65.34 | Mizoram        |
+|     15 | Roshan  | roshan@masai     | 65.34 | Uttar Pradesh  |
+|      8 | Rehan   | rehan@ms         | 59.11 | MP             |
+|      2 | sudip   | sudip@ms         | 56.43 | Nepal          |
+|      3 | bhoomi  | bhoomi@gmail.com | 45.42 | Kerala         |
+|     11 | divya   | divya@francis    | 43.21 | Tripura        |
+|      7 | mosham  | mosham@ms        | 42.51 | UP             |
+|     14 | Monu    | monu@masai       | 35.34 | Madhya Pradesh |
+|     12 | Vivek   | vivek@francis    | 33.21 | Jharkhand      |
++--------+---------+------------------+-------+----------------+
+15 rows in set (0.00 sec)
