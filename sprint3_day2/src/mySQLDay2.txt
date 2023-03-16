@@ -1,0 +1,128 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| eva4               |
+| firstproject       |
+| information_schema |
+| mysql              |
+| performance_schema |
+| pscproject         |
+| sb101_db           |
+| sb101_feb          |
+| sys                |
+| web21db            |
++--------------------+
+10 rows in set (0.11 sec)
+
+mysql> use sb101_feb;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_sb101_feb |
++---------------------+
+| product             |
+| student             |
+| students            |
++---------------------+
+3 rows in set (0.01 sec)
+
+mysql> select * from students;
++-------------+--------+------+-------------------+
+| roll_number | name   | cgpa | registration_date |
++-------------+--------+------+-------------------+
+| 1           | suraj  |  7.0 | 2022-02-12        |
+| 2           | rehan  |  6.2 | 2021-12-21        |
+| fw20_0280   | vishal |  9.0 | 2022-05-16        |
+| fw21_211    | rehan  |  8.9 | 2022-06-21        |
++-------------+--------+------+-------------------+
+4 rows in set (0.02 sec)
+
+mysql> select * from student;
++--------+---------+------------------+-------+----------------+
+| rollNo | name    | email            | x_per | state          |
++--------+---------+------------------+-------+----------------+
+|      1 | ABC     | abc@gmail.com    | 77.42 | Karnataka      |
+|      2 | sudip   | sudip@ms         | 56.43 | Nepal          |
+|      3 | bhoomi  | bhoomi@gmail.com | 45.42 | Kerala         |
+|      4 | hero    | hero@gmail.com   | 87.42 | Jharkhand      |
+|      5 | Ram     | ram@gmail.com    | 93.12 | Bihar          |
+|      6 | Ravi    | ravi@ms          | 72.43 | UP             |
+|      7 | mosham  | mosham@ms        | 42.51 | UP             |
+|      8 | Rehan   | rehan@ms         | 59.11 | MP             |
+|      9 | Levis   | levis@ms         | 91.11 | KARNATAKA      |
+|     10 | Shruthi | Shruthi@ms       | 97.11 | Kerala         |
+|     11 | divya   | divya@francis    | 43.21 | Tripura        |
+|     12 | Vivek   | vivek@francis    | 33.21 | Jharkhand      |
+|     13 | Monoj   | manoj@masai      | 65.34 | Mizoram        |
+|     14 | Monu    | monu@masai       | 35.34 | Madhya Pradesh |
+|     15 | Roshan  | roshan@masai     | 65.34 | Uttar Pradesh  |
++--------+---------+------------------+-------+----------------+
+15 rows in set (0.01 sec)
+
+mysql> select x_per from student;
++-------+
+| x_per |
++-------+
+| 77.42 |
+| 56.43 |
+| 45.42 |
+| 87.42 |
+| 93.12 |
+| 72.43 |
+| 42.51 |
+| 59.11 |
+| 91.11 |
+| 97.11 |
+| 43.21 |
+| 33.21 |
+| 65.34 |
+| 35.34 |
+| 65.34 |
++-------+
+15 rows in set (0.00 sec)
+
+mysql> select dintinct(x_per) from student;
+ERROR 1305 (42000): FUNCTION sb101_feb.dintinct does not exist
+mysql> select distinct(x_per) from student;
++-------+
+| x_per |
++-------+
+| 77.42 |
+| 56.43 |
+| 45.42 |
+| 87.42 |
+| 93.12 |
+| 72.43 |
+| 42.51 |
+| 59.11 |
+| 91.11 |
+| 97.11 |
+| 43.21 |
+| 33.21 |
+| 65.34 |
+| 35.34 |
++-------+
+14 rows in set (0.00 sec)
+
+mysql> select rollNo as "ROLL NUMBER", name 'Student Name', x_per 'Matric Exam persentage' from student;
++-------------+--------------+------------------------+
+| ROLL NUMBER | Student Name | Matric Exam persentage |
++-------------+--------------+------------------------+
+|           1 | ABC          |                  77.42 |
+|           2 | sudip        |                  56.43 |
+|           3 | bhoomi       |                  45.42 |
+|           4 | hero         |                  87.42 |
+|           5 | Ram          |                  93.12 |
+|           6 | Ravi         |                  72.43 |
+|           7 | mosham       |                  42.51 |
+|           8 | Rehan        |                  59.11 |
+|           9 | Levis        |                  91.11 |
+|          10 | Shruthi      |                  97.11 |
+|          11 | divya        |                  43.21 |
+|          12 | Vivek        |                  33.21 |
+|          13 | Monoj        |                  65.34 |
+|          14 | Monu         |                  35.34 |
+|          15 | Roshan       |                  65.34 |
++-------------+--------------+------------------------+
+15 rows in set (0.00 sec)
