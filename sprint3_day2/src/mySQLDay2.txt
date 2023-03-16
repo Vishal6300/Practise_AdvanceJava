@@ -126,3 +126,11 @@ mysql> select rollNo as "ROLL NUMBER", name 'Student Name', x_per 'Matric Exam p
 |          15 | Roshan       |                  65.34 |
 +-------------+--------------+------------------------+
 15 rows in set (0.00 sec)
+mysql> select * from student where x_per>=60.00 AND state="Karnataka";
++--------+-------+---------------+-------+-----------+
+| rollNo | name  | email         | x_per | state     |
++--------+-------+---------------+-------+-----------+
+|      1 | ABC   | abc@gmail.com | 77.42 | Karnataka |
+|      9 | Levis | levis@ms      | 91.11 | KARNATAKA |
++--------+-------+---------------+-------+-----------+
+2 rows in set (0.00 sec)
