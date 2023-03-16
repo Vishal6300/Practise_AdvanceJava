@@ -137,3 +137,31 @@ mysql> select * from student where x_per>=60.00 AND state="Karnataka";
 
 mysql> select * from student where email is null;
 Empty set (0.01 sec)
+
+mysql> select * from student where name LIKE '%C%';
++--------+------+---------------+-------+-----------+
+| rollNo | name | email         | x_per | state     |
++--------+------+---------------+-------+-----------+
+|      1 | ABC  | abc@gmail.com | 77.42 | Karnataka |
++--------+------+---------------+-------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select * from student where name LIKE '%a_';
++--------+--------+---------------+-------+---------------+
+| rollNo | name   | email         | x_per | state         |
++--------+--------+---------------+-------+---------------+
+|      5 | Ram    | ram@gmail.com | 93.12 | Bihar         |
+|      7 | mosham | mosham@ms     | 42.51 | UP            |
+|      8 | Rehan  | rehan@ms      | 59.11 | MP            |
+|     15 | Roshan | roshan@masai  | 65.34 | Uttar Pradesh |
++--------+--------+---------------+-------+---------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from student where name LIKE '_a%';
++--------+------+---------------+-------+-------+
+| rollNo | name | email         | x_per | state |
++--------+------+---------------+-------+-------+
+|      5 | Ram  | ram@gmail.com | 93.12 | Bihar |
+|      6 | Ravi | ravi@ms       | 72.43 | UP    |
++--------+------+---------------+-------+-------+
+2 rows in set (0.00 sec)
