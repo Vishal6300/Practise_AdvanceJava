@@ -309,3 +309,14 @@ mysql> select name,email, x_per from student ORDER BY name DESC LIMIT 5;
 | Rehan   | rehan@ms      | 59.11 |
 +---------+---------------+-------+
 5 rows in set (0.00 sec)
+
+mysql> select name,email, x_per from student ORDER BY name DESC LIMIT 2,4;
++---------+--------------+-------+
+| name    | email        | x_per |
++---------+--------------+-------+
+| Shruthi | Shruthi@ms   | 97.11 |
+| Roshan  | roshan@masai | 65.34 |
+| Rehan   | rehan@ms     | 59.11 |
+| Ravi    | ravi@ms      | 72.43 |
++---------+--------------+-------+
+4 rows in set (0.00 sec)
