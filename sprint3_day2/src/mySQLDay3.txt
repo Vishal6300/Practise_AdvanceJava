@@ -39,8 +39,7 @@ mysql> show tables;
 +---------------------+
 3 rows in set (0.01 sec)
 
-mysql> create table employee(eid int primary key,ename varchar(12), dept var
-char(12), salary int , designation varchar(12));
+mysql> create table employee(eid int primary key,ename varchar(12), dept varchar(12), salary int , designation varchar(12));
 Query OK, 0 rows affected (0.10 sec)
 
 mysql> desc employee;
@@ -69,8 +68,7 @@ Query OK, 1 row affected (0.01 sec)
 mysql> insert into employee values(104,"Mohit","HRM",27000,"SM");
 Query OK, 1 row affected (0.00 sec)
 
-mysql> select dept, SUM(salary) TOTAL_SAL from employee group by dept Having
- SUM(salary) > 25000;
+mysql> select dept, SUM(salary) TOTAL_SAL from employee group by dept Having SUM(salary) > 25000;
 +-------+-----------+
 | dept  | TOTAL_SAL |
 +-------+-----------+
@@ -100,7 +98,7 @@ mysql> show tables;
 +--------------------+
 3 rows in set (0.01 sec)
 
-ysql> select * from product;
+mysql> select * from product;
 +-----------+-------------+-------+----------+
 | productid | productName | price | quantity |
 +-----------+-------------+-------+----------+
@@ -108,3 +106,64 @@ ysql> select * from product;
 |      1002 | powebank    |  2099 |        5 |
 +-----------+-------------+-------+----------+
 2 rows in set (0.03 sec)
+
+mysql> create table soldier(sol_id varchar(4) primary key, s
+ol_name varchar(12) not null, sol_age int, col_id varchar(12
+), constraint fk_sol FOREIGN KEY(col_id) references(sol_id))
+;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(sol_id))' at line 1
+mysql> create table soldier(sol_id varchar(4) primary key, sol_name varchar(12) not null, sol_age int, col_id varchar(4), constraint fk_sol FOREIGN KEY(col_id) references(sol_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(sol_id))' at line 1
+mysql> create table soldier(sol_id varchar(4) primary key, sol_name varchar(12) not null, sol_age int, col_id varchar(4), constraint fk_sol FOREIGN KEY(col_id) references soldier(sol_id));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc soldier;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| sol_id   | varchar(4)  | NO   | PRI | NULL    |       |
+| sol_name | varchar(12) | NO   |     | NULL    |       |
+| sol_age  | int         | YES  |     | NULL    |       |
+| col_id   | varchar(4)  | YES  | MUL | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> insert into soldier values("S001","ABC",34,NULL);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into soldier values("S002","BCD",24,"S001");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into soldier values("S003","EFG",27,"S001");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into soldier values("S004","HIJ",28,NULL);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into soldier values("S005","KLM",35,"S004");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from soldier;
++--------+----------+---------+--------+
+| sol_id | sol_name | sol_age | col_id |
++--------+----------+---------+--------+
+| S001   | ABC      |      34 | NULL   |
+| S002   | BCD      |      24 | S001   |
+| S003   | EFG      |      27 | S001   |
+| S004   | HIJ      |      28 | NULL   |
+| S005   | KLM      |      35 | S004   |
++--------+----------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select s.sol_name SOLDIER_NAME, C.sol_name COL_name f
+rom soldier s INNER JOIN soldier C ON S.col_id = C.sol_id;
++--------------+----------+
+| SOLDIER_NAME | COL_name |
++--------------+----------+
+| BCD          | ABC      |
+| EFG          | ABC      |
+| KLM          | HIJ      |
++--------------+----------+
+3 rows in set (0.00 sec)
+
+mysql>
