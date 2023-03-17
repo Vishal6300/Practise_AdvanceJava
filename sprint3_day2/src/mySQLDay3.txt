@@ -99,3 +99,12 @@ mysql> show tables;
 | product            |
 +--------------------+
 3 rows in set (0.01 sec)
+
+ysql> select * from product;
++-----------+-------------+-------+----------+
+| productid | productName | price | quantity |
++-----------+-------------+-------+----------+
+|      1001 | earpods     |  1199 |        2 |
+|      1002 | powebank    |  2099 |        5 |
++-----------+-------------+-------+----------+
+2 rows in set (0.03 sec)
