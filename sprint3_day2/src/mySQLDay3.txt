@@ -87,3 +87,15 @@ mysql> select * from product;
 | 103 | Ipod   |       10 |   1200 |
 +-----+--------+----------+--------+
 2 rows in set (0.04 sec)
+
+mysql> use  sb101_db;
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_sb101_db |
++--------------------+
+| department         |
+| employee           |
+| product            |
++--------------------+
+3 rows in set (0.01 sec)
