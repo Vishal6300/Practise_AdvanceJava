@@ -79,4 +79,11 @@ mysql> select dept, SUM(salary) TOTAL_SAL from employee group by dept Having
 +-------+-----------+
 2 rows in set (0.01 sec)
 
-mysql>
+mysql> select * from product;
++-----+--------+----------+--------+
+| pid | pname  | quantity | price  |
++-----+--------+----------+--------+
+| 102 | Iphone |       12 | 120000 |
+| 103 | Ipod   |       10 |   1200 |
++-----+--------+----------+--------+
+2 rows in set (0.04 sec)
