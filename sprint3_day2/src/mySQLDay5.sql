@@ -12,6 +12,14 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql> use sb101_feb;
 Database changed
+mysql> select * from transaction;
++-----+--------+--------+------------------+
+| tid | name   | amount | email            |
++-----+--------+--------+------------------+
+|   1 | Dinesh |   4800 | dinesh@ms        |
+|   2 | Jayesh |   4000 | jayesh@gmail.com |
++-----+--------+--------+------------------+
+2 rows in set (0.00 sec)
 
 mysql> select * from student;
 +--------+---------+------------------+-------+----------------+
@@ -34,3 +42,30 @@ mysql> select * from student;
 |     15 | Roshan  | roshan@masai     | 65.34 | Uttar Pradesh  |
 +--------+---------+------------------+-------+----------------+
 15 rows in set (0.00 sec)
+
+mysql> Show index from student;
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| student |          0 | PRIMARY  |            1 | rollNo      | A         |          13 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| student |          0 | email    |            1 | email       | A         |          13 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+2 rows in set (0.03 sec)
+
+mysql> select * from student WHERE name="abc";
++--------+------+---------------+-------+-----------+
+| rollNo | name | email         | x_per | state     |
++--------+------+---------------+-------+-----------+
+|      1 | ABC  | abc@gmail.com | 77.42 | Karnataka |
++--------+------+---------------+-------+-----------+
+1 row in set (0.00 sec)
+
+mysql> EXPLAIN select * from student WHERE name="abc";
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------------+
+| id | select_type | table   | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra       |
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------------+
+|  1 | SIMPLE      | student | NULL       | ALL  | NULL          | NULL | NULL    | NULL |   13 |    10.00 | Using where |
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------------+
+1 row in set, 1 warning (0.01 sec)
+
+mysql>
