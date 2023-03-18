@@ -83,4 +83,26 @@ mysql> desc student;
 +--------+-------------+------+-----+---------+-------+
 5 rows in set (0.01 sec)
 
-mysql>
+mysql> select * from student WHERE x_per> (Select avg(x_per) f
+rom student);
++--------+---------+----------------+-------+---------------+
+| rollNo | name    | email          | x_per | state         |
++--------+---------+----------------+-------+---------------+
+|      1 | ABC     | abc@gmail.com  | 77.42 | Karnataka     |
+|      4 | hero    | hero@gmail.com | 87.42 | Jharkhand     |
+|      5 | Ram     | ram@gmail.com  | 93.12 | Bihar         |
+|      6 | Ravi    | ravi@ms        | 72.43 | UP            |
+|      9 | Levis   | levis@ms       | 91.11 | KARNATAKA     |
+|     10 | Shruthi | Shruthi@ms     | 97.11 | Kerala        |
+|     13 | Monoj   | manoj@masai    | 65.34 | Mizoram       |
+|     15 | Roshan  | roshan@masai   | 65.34 | Uttar Pradesh |
++--------+---------+----------------+-------+---------------+
+8 rows in set (0.00 sec)
+
+mysql> (Select avg(x_per) from student);
++------------+
+| avg(x_per) |
++------------+
+|  64.301333 |
++------------+
+1 row in set (0.00 sec)
