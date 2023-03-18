@@ -133,3 +133,28 @@ mysql> Select * from student WHERE  x_per NOT IN (Select x_per
 |     15 | Roshan  | roshan@masai     | 65.34 | Uttar Pradesh  |
 +--------+---------+------------------+-------+----------------+
 13 rows in set (0.00 sec)
+
+mysql> Select * from student WHERE  x_per < ANY(Select x_per FROM Student where State="Karnataka");
++--------+--------+------------------+-------+----------------+
+| rollNo | name   | email            | x_per | state
+|
++--------+--------+------------------+-------+----------------+
+|      1 | ABC    | abc@gmail.com    | 77.42 | Karnataka      |
+|      2 | sudip  | sudip@ms         | 56.43 | Nepal
+|
+|      3 | bhoomi | bhoomi@gmail.com | 45.42 | Kerala
+|
+|      4 | hero   | hero@gmail.com   | 87.42 | Jharkhand      |
+|      6 | Ravi   | ravi@ms          | 72.43 | UP
+|
+|      7 | mosham | mosham@ms        | 42.51 | UP
+|
+|      8 | Rehan  | rehan@ms         | 59.11 | MP
+|
+|     11 | divya  | divya@francis    | 43.21 | Tripura        |
+|     12 | Vivek  | vivek@francis    | 33.21 | Jharkhand      |
+|     13 | Monoj  | manoj@masai      | 65.34 | Mizoram        |
+|     14 | Monu   | monu@masai       | 35.34 | Madhya Pradesh |
+|     15 | Roshan | roshan@masai     | 65.34 | Uttar Pradesh  |
++--------+--------+------------------+-------+----------------+
+12 rows in set (0.00 sec)
