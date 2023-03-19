@@ -114,7 +114,7 @@ mysql> select * from transaction;
 2 rows in set (0.00 sec)
 
 After restarting the MYSQLCommand
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=09:47 PM 19-03-2023
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=
 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 11
