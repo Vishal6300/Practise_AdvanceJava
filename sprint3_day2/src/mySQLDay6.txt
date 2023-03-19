@@ -130,3 +130,12 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql> use sb101_feb;
 Database changed
+
+mysql> select * from transaction;
++-----+--------+--------+------------------+
+| tid | name   | amount | email            |
++-----+--------+--------+------------------+
+|   1 | Dinesh |   4800 | dinesh@ms        |
+|   2 | Jayesh |   4000 | jayesh@gmail.com |
++-----+--------+--------+------------------+
+2 rows in set (0.00 sec)
