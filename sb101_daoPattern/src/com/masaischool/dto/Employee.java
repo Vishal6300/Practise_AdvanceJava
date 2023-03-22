@@ -31,6 +31,7 @@ public class Employee {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+	
 	public Employee(String empid, String name, double salary, LocalDate date) {
 		super();
 		this.empid = empid;
@@ -38,6 +39,13 @@ public class Employee {
 		this.salary = salary;
 		this.date = date;
 	}
+	
+	@Override
+	public String toString() {
+		return "Employee [empid=" + empid + ", name=" + name + ", salary=" + salary + ", date=" + date + "]";
+	}
+	
+	
 	
 	
 }
