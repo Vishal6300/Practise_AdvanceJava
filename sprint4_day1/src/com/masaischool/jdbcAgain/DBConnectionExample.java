@@ -1,4 +1,4 @@
-package com.masaischool.jdbcxone;
+package com.masaischool.jdbcAgain;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
