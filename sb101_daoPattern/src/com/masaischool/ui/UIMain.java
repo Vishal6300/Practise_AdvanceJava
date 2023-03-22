@@ -23,6 +23,20 @@ public class UIMain {
 	static void deleteEmployeeUI(Scanner sc) {
 			
 	}
+	static void updateEmployeeUI(Scanner sc) {
+		System.out.println("ENter employee id");
+		String eid=sc.next();
+		
+		System.out.println("ENter employee name");
+		String name=sc.next();	
+		
+		System.out.println("ENter employee salary");
+		double salary=sc.nextDouble();
+		
+		System.out.println("ENter employee joining date");
+		LocalDate joiningDate= LocalDate.parse(sc.next());
+		
+	}
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -69,4 +83,4 @@ public class UIMain {
 
 	}
 
-}
+
