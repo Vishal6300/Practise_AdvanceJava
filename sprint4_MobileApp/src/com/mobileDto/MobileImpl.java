@@ -2,15 +2,18 @@ package com.mobileDto;
 
 import java.time.LocalDate;
 
-public class MobileImpl {
+public class MobileImpl implements Mobile{
 	private int id;
 	private String model_no;
 	private String company;
 	private int price;
 	private LocalDate MFGdate;
+	
+	
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
