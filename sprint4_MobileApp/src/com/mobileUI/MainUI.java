@@ -3,6 +3,9 @@ package com.mobileUI;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+import com.mobileDto.Mobile;
+import com.mobileDto.MobileImpl;
+
 public class MainUI {
 public static void main(String[] args) {
 	Scanner sc=new Scanner(System.in);
@@ -60,5 +63,7 @@ public static void addMobile(Scanner sc) {
 	
 	System.out.println("Enter MFGdate of mobile");
 	LocalDate MFGdate=LocalDate.parse(sc.next());
+	
+	Mobile mobile= new MobileImpl(id, model_no, company, price, MFGdate);
 }
 }

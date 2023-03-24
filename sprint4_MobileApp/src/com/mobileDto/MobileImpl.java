@@ -9,35 +9,43 @@ public class MobileImpl implements Mobile{
 	private int price;
 	private LocalDate MFGdate;
 	
-	
+	@Override
 	public int getId() {
 		return id;
 	}
-	
+	@Override
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Override
 	public String getModel_no() {
 		return model_no;
 	}
+	@Override
 	public void setModel_no(String model_no) {
 		this.model_no = model_no;
 	}
+	@Override
 	public String getCompany() {
 		return company;
 	}
+	@Override
 	public void setCompany(String company) {
 		this.company = company;
 	}
+	@Override
 	public int getPrice() {
 		return price;
 	}
+	@Override
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	@Override
 	public LocalDate getMFGdate() {
 		return MFGdate;
 	}
+	@Override
 	public void setMFGdate(LocalDate mFGdate) {
 		MFGdate = mFGdate;
 	}
