@@ -151,7 +151,7 @@ public class UIMain {
 					searchEmployeeByJoiningDateRange(sc);
 					break;
 				case 0:
-					System.out.println("Bye Bye");
+					System.out.println("Thank you for using our services 🙏");
 					break;
 				default:
 					System.out.println("Invalid Selection please try again later");
