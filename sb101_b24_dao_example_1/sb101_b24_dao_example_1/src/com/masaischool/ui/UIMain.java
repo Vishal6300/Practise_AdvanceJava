@@ -15,9 +15,8 @@ import com.masaischool.exception.SomethingWentWrongException;
 public class UIMain {
 	static void addEmployeeUI(Scanner sc) {
 		// take input employee details
-
-		// System.out.print("Enter employee id ");
-		// String eid = sc.next();
+		System.out.print("Enter employee id ");
+		String eid = sc.next();
 
 		System.out.print("Enter employee name ");
 		String name = sc.next();
