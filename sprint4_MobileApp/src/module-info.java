@@ -6,4 +6,5 @@
  *
  */
 module sprint4_MobileApp {
+	requires java.sql;
 }
