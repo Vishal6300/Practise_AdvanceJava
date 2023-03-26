@@ -28,7 +28,7 @@ public class UIMain {
 		LocalDate joiningDate = LocalDate.parse(sc.next());
 
 		// Create an object of DTO
-		Employee employee = new EmployeeImpl(eid, name, salary, joiningDate);
+		// Employee employee = new EmployeeImpl(eid, name, salary, joiningDate);
 
 		EmployeeDAO empDAO = new EmployeeDAOImpl();
 
