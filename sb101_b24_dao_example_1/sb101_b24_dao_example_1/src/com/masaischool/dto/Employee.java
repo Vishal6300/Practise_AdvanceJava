@@ -8,9 +8,12 @@ public interface Employee {
 	 * 
 	 * @return String the employee id for the calling object
 	 */
-	// public String getEmpId();
-	// public void setEmpId(String empId);
-	// public String getName();
+	public String getEmpId();
+
+	public void setEmpId(String empId);
+
+	public String getName();
+
 	public void setName(String name);
 
 	public double getSalary();
