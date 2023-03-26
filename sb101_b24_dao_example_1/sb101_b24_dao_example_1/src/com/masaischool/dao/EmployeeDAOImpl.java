@@ -18,15 +18,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	public void addEmployee(Employee emp) throws SomethingWentWrongException {
 		Connection conn = null;
 		try {
-			// conn = DBUtils.getConnectionTodatabase();
-			// String query = "INSERT INTO employee (eid, name, salary, joining_date) VALUES
-			// (?, ?, ?, ?)";
-			// PreparedStatement ps = conn.prepareStatement(query);
-			// ps.setString(1, emp.getEmpId());
-			// ps.setString(2, emp.getName());
-			// ps.setDouble(3, emp.getSalary());
-			// ps.setDate(4, Date.valueOf(emp.getJoiningDate()));
-			// ps.executeUpdate();
+			conn = DBUtils.getConnectionTodatabase();
+			String query = "INSERT INTO employee (eid, name, salary, joining_date) VALUES (?, ?, ?, ?)";
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, emp.getEmpId());
+			ps.setString(2, emp.getName());
+			ps.setDouble(3, emp.getSalary());
+			ps.setDate(4, Date.valueOf(emp.getJoiningDate()));
+			ps.executeUpdate();
 		} catch (ClassNotFoundException | SQLException ex) {
 			throw new SomethingWentWrongException("Unable to insert the record now, try again later");
 		} finally {
