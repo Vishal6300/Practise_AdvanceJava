@@ -31,7 +31,6 @@ public class Main {
 			System.out.print("Enter company_id ");
 			String company_id = sc.next();
 
-			// Create an object of DTO
 			Car car = new CarImpl(car_id, model_name, price, total_seats,company_id);
 
 			CarDao carDAO = new CarDaoImpl();
@@ -62,10 +61,8 @@ public class Main {
 			System.out.print("Enter company_id ");
 			String company_id = sc.next();
 
-			// Create an object of DTO
 			Car car = new CarImpl(car_id, model_name, price, total_seats,company_id);
 
-			// take an object of DAO
 			CarDao carDao = new CarDaoImpl();
 			try {
 				
@@ -81,7 +78,7 @@ public class Main {
 			System.out.print("Enter car_id ");
 			String car_id = sc.next();
 
-			// take an object of DAO
+	
 			CarDao carDao= new CarDaoImpl();
 
 			try {
@@ -95,7 +92,6 @@ public class Main {
 		}
 
 		static void viewCar() {
-			// take an object of DAO
 			CarDao carDao = new CarDaoImpl();
 			try {
 				List<Car> carList = carDao.getCarList();

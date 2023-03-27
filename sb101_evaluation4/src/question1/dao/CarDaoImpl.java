@@ -41,13 +41,14 @@ public class CarDaoImpl implements CarDao{
 		Connection conn = null;
 		try {
 			conn = DBUtils.getConnectionTodatabase();
-			String query = "UPDATE car SET car_id = ?, model_name = ?, total_seats = ?,company_id = ? WHERE company_id = ?";
+			String query = "UPDATE car SET car_id = ?, model_name = ?,price = ?, total_seats = ?,company_id = ? WHERE car_id = ?";
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setString(1, car.getCar_id());
 			ps.setString(2, car.getModel_name());
 			ps.setInt(3, car.getPrice());
 			ps.setInt(4, car.getTotal_seats());
 			ps.setString(5, car.getCompany_id());
+			ps.setString(6, car.getCar_id());
 			ps.executeUpdate();
 		} catch (ClassNotFoundException | SQLException ex) {
 			throw new SomethingWentWrongException("Unable to update the record now, try again later");
