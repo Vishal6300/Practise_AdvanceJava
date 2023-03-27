@@ -100,8 +100,8 @@ public class Main {
 			try {
 				List<Car> carList = carDao.getCarList();
 				Consumer<Car> con = car -> System.out
-						.println("Car Id " + car.getCar_id() + " Model_Name " + car.getModel_name()
-								+ " Price " + car.getPrice() + " TotalSeats " + car.getTotal_seats()+ " Company_id " + car.getCompany_id());
+						.println("Car Id: " + car.getCar_id() + " Model Name: " + car.getModel_name()
+								+ " Price: " + car.getPrice() + " Total Seats: " + car.getTotal_seats()+ " Company_id: " + car.getCompany_id());
 				carList.forEach(con);
 			} catch (SomethingWentWrongException | NoRecordFoundException ex) {
 				System.out.println(ex.getMessage());
